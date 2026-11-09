@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Code Generator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="logo">
+                <span>▦</span>
+            </div>
+
+            <h1>QR Code Generator</h1>
+
+            <p>
+                Turn any link, text, image, video or audio into a QR code instantly.
+                Simple, fast and free!
+            </p>
+        </div>
+
+        <div class="generator-card">
+
+            <!-- Mode tabs -->
+            <div class="tabs">
+                <button type="button" id="tabLink" class="tab active">
+                    Paste Link / Text
+                </button>
+                <button type="button" id="tabFile" class="tab">
+                    Upload File
+                </button>
+            </div>
+
+            <!-- Option 1: Link / Text -->
+            <form id="linkForm">
+
+                <label for="linkInput">Enter Link or Text</label>
+
+                <div class="input-group">
+                    <textarea
+                        id="linkInput"
+                        rows="3"
+                        placeholder="Paste any link or text"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="generateBtn" class="primary-btn">
+                    Generate QR Code
+                </button>
+
+            </form>
+
+            <!-- Option 2: File upload -->
+            <form id="fileForm" class="hidden">
+
+                <label for="fileInput">Upload Image, Video or Audio</label>
+
+                <div class="input-group">
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept="image/*,video/*,audio/*"
+                        required
+                    >
+                </div>
+
+                <p class="file-hint">Max size 50 MB. SVG files are not allowed.</p>
+
+                <button type="submit" id="uploadBtn" class="primary-btn">
+                    Upload &amp; Generate QR Code
+                </button>
+
+            </form>
+
+            <div id="message" class="message"></div>
+
+            <div id="qrSection" class="qr-section hidden">
+
+                <h2>Your QR Code</h2>
+
+                <div class="qr-image-container">
+                    <img id="qrImage" src="" alt="Generated QR Code">
+                </div>
+
+                <p class="qr-description" id="qrDescription">
+                    Scan this QR code using your smartphone.
+                </p>
+
+                <a id="fileLink" class="file-link hidden" href="#" target="_blank" rel="noopener">
+                    Open uploaded file
+                </a>
+
+                <div class="action-buttons">
+
+                    <a
+                        id="downloadBtn"
+                        class="download-btn"
+                        download="my-qrcode.png"
+                    >
+                        Download QR
+                    </a>
+
+                    <button
+                        type="button"
+                        id="clearBtn"
+                        class="clear-btn"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <p>Developed using HTML, CSS, JavaScript &amp; Node.js</p>
+            <p>© 2026 QR Code Generator</p>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
